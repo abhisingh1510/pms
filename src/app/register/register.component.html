@@ -1,0 +1,59 @@
+<div class="post">
+  <h3>
+    <div *ngIf="flag; then con1 else con2"></div>
+    <ng-template #con1>
+      {{d.r}}
+    </ng-template>
+    <ng-template #con2>
+      
+    </ng-template>
+  </h3>
+  <h2 class="title">Register</h2>
+  <form #userlogin = "ngForm" name="form" (ngSubmit) = "onClickSubmit(userlogin.value)">
+    <table>
+    <tr>
+      <td>Username</td>
+      <td>
+        <input type="text" name="unm" ngModel>
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input type="password" name="pass" ngModel>
+      </td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>
+        <textarea ngModel name="address" cols="20" rows="6"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>Select City</td>
+      <td>
+        <select ngModel name="city">
+          <option>Indore</option>
+          <option>Bhopal</option>
+          <option>Delhi</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        <input ngModel type="radio" value="male" name="male" checked="true">Male
+        <input ngModel type="radio" value="female" name="female">Female
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input ngModel name="s" type="submit" value="Register">
+      </td>
+    </tr>
+  </table>
+  </form>
+</div>
+
+<div style="clear: both;">&nbsp;</div>

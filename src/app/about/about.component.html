@@ -1,0 +1,45 @@
+
+<div id="content">
+  <div class="contentbg">
+    
+    <div class="post">
+      <h2 class="title"><a href="#">Welcome to commercial</a></h2>
+      
+      <h2>Employee Details</h2>
+
+      <div *ngIf="con; then con1 else con2"></div>
+      <ng-template #con1>
+        <table border="2px solid black" *ngFor="let row of emp_details">
+          <tr><font style="font-size: 32px">
+            <td>{{row.emp_no}}</td>
+            <td>{{row.esal}}</td>
+            <td>{{row.enm}}</td>
+          </font></tr>
+        </table>  
+      <h4>Username:{{username}}</h4>
+      <h4>Password:{{password}}</h4>
+
+      <h2>Marks</h2>
+      <br><p *ngFor="let element of mks">
+        {{element}}
+      </p>
+
+      <h2>Employee Details</h2>
+      <p *ngFor="let row of emp_details">
+        <br>{{row.emp_no}}<br><br>
+        {{row.esal}}<br><br>
+        {{row.enm}}<br><br>
+      </p>
+    </ng-template>
+    <ng-template #con2>
+      <h2>Oops! record not found</h2>
+    </ng-template>
+      
+    </div>
+    
+  </div>
+    
+  <div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end #content -->
+
